@@ -29,6 +29,13 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-external-links`,
+            options: {
+              target: "_blank",
+              rel: "noopener noreferrer"
+            }
+          },
+          {
             resolve: `gatsby-remark-katex`,
             options: {
               strict: `ignore`,
