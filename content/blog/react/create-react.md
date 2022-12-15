@@ -8,3 +8,7 @@ draft: false
 ## create react-app
 
 [Create React App web site](https://create-react-app.dev/)
+
+```
+npx react-create-app my-app
+```
