@@ -53,6 +53,9 @@ Styled component는 React가 CSS-in-JS 기술을 사용하여 JavaScript와 CSS�
 npm i styled-components
 ```
 
+## @loadable/component
+
+
 ## Express
 [npm Link](https://www.npmjs.com/package/express)
 <br>
@@ -72,4 +75,4 @@ npm i express
 ```
 
 ## 그외
-`prettier, jest, lodash, eslint, date-fns, axios, `
+`prettier, jest, lodash, eslint, date-fns, axios, big.js, clsx, html-entities, js-cookie, immer `

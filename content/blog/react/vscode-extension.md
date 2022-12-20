@@ -62,3 +62,6 @@ Visual Studio Code용 노드 변경 사례 를 둘러싼 래퍼  입니다. 현�
 
 ## Code Spell Checker
 camelCase 코드 와 잘 작동하는 기본 맞춤법 검사기입니다 . 기본적으로 잘못된 긍정의 수를 낮게 유지하면서 일반적인 철자 오류를 잡는 데 도움이 됩니다.
+
+## vscode-styled-components
+styled components 를 사용하기 위한 활성화
