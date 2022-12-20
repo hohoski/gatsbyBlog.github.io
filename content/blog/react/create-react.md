@@ -13,14 +13,79 @@ npx react-create-app my-app
 ```
 
 ### library install
+
+#### yarn 설치  (글로벌)
 - yarn 'npm install -g yarn' [참조](https://www.holaxprogramming.com/2017/12/21/node-yarn-tutorials/)
-- eslint `yarn add eslint`
-- prettier `yarn add prettier --dev`
-- react-router `yarn add react-router`
-- react-router-dom `yarn add react-router-dom`
+
+#### prettier 설정
+- prettier `yarn add prettier --dev` [참조](https://dev-yakuza.posstree.com/ko/react/prettier/) <br>
+  ROOT 에 .prettierrc.js 생성
+```
+module.exports = {
+    ingleQuote: true,
+    // 문자열은 작은 따옴표로 통일
+    semi: true,
+    //코드 마지막에 세미콜른이 자동 생성
+    useTabs: false,
+    //탭의 사용을 금하고 스페이스바 사용으로 대체
+    tabWidth: 4,
+    // 들여쓰기 너비는 4칸
+    trailingComma: 'all',
+    // 객체나 배열 키:값 뒤에 콤마 생성
+    printWidth: 160,
+    // 코드 한줄이 maximum 80칸
+    arrowParens: 'avoid',
+    // 화살표 함수가 하나의 매개변수를 받을 때 괄호 생략
+};
+```
+#### eslint 설정 (react-app)
+- `yarn add eslint-config-prettier eslint-plugin-prettier --dev`<br>
+  - eslint-config-prettier : ESLint와 Prettier에 중복되는 Formatting 룰 삭제<br>
+  - eslint-plugin-prettier : ESLint에 Prettier의 Formatting 기능 추가
+- eslint `yarn add eslint-config-react-app eslint@^8.0.0 --dev`
+  ROOT 에 .eslintrc.json 생성
+```
+{
+    "extends": ["react-app", "plugin:prettier/recommended"],
+    "rules": {
+        "no-unused-vars": "off",
+        "react-hooks/exhaustive-deps": "off",
+        "no-throw-literal": "off",
+        "no-sequences": "off",
+        "require-yield": "off",
+        "jsx-a11y/anchor-has-content": "off",
+        "jsx-a11y/anchor-is-valid": "off",
+        "import/no-anonymous-default-export": "off",
+        "no-useless-escape": "off"
+    }
+}
+```
+>  참조 : [https://velog.io/@cookncoding/ESLint-Prettier-Airbnb-Style-Guide%EB%A1%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0](https://velog.io/@cookncoding/ESLint-Prettier-Airbnb-Style-Guide%EB%A1%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0) 
+
+### mui 설치
+- @mui/material @emotion/react @emotion/styled `yarn add @mui/material @emotion/react @emotion/styled @mui/styled-engine-sc` [Document](https://mui.com/material-ui/getting-started/installation/)
+
+### styled-components 설치
 - styled-components `yarn add styled-components` [Document](https://styled-components.com/)
+
+
+- react-router `yarn add react-router react-router-dom`
 - react-error-boundary `yarn add react-error-boundary` [참조](https://velog.io/@bbaa3218/React-%EC%97%90%EB%9F%AC-%EB%B0%94%EC%9A%B4%EB%8D%94%EB%A6%ACError-Boundary)
-- 
+
+
+### 절대 경로 설정하기
+Root에 tsconfig.json(typescript) or jsconfig.json 생성
+```
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@*": ["src/*"]
+        }
+    },
+    "include": ["src"]
+}
+```
 
 ### scripts 의 eject 시에 발생하는 esLine error
 [facebook-github issue/12070](https://github.com/facebook/create-react-app/issues/12070)<br>
@@ -57,64 +122,7 @@ npx react-create-app my-app
     }
 ```
 
-## Prettier
-협업시 코드 포맷을 맞추기 위해 Prettier 설치<br>
-Prettier는 코드 포맷터(Code formatter)로써 미리 코드 포맷을 정의하고, 해당 포맷에 맞게 코드를 수정해 주는 역할을 합니다.
 
-### 설치
-```
-npm install --save-dev prettier
-```
-### 설정
-React에서 Prettier를 사용하기 위해서는 사용할 코드 포맷을 미리 정의할 필요가 있습니다. 코드 포맷을 미리 정의하기 위해, `.prettierrc.js` 파일을 생성하고 다음과 같이 수정합니다.
-```js
-module.exports = {
-  singleQuote: true,
-  // 문자열은 작은 따옴표로 통일
-  semi: true,
-  //코드 마지막에 세미콜른이 자동 생성
-  useTabs: false,
-  //탭의 사용을 금하고 스페이스바 사용으로 대체
-  tabWidth: 4,
-  // 들여쓰기 너비는 4칸
-  trailingComma: 'all',
-  // 객체나 배열 키:값 뒤에 콤마 생성
-  printWidth: 80,
-  // 코드 한줄이 maximum 80칸
-  arrowParens: 'avoid',
-  // 화살표 함수가 하나의 매개변수를 받을 때 괄호 생략
-};
-```
-
-### format check and formatting
-```
-"scripts": {
-  ...
-  "format": "prettier --check ./src",
-  "format:fix": "prettier --write ./src"
-},
-```
-
-
-## eslint
-[eslint Document](https://eslint.org/docs/latest/) <br>
-extents : `eslint-config-react-app [npm istall eslint-config-react-app]` 
-```
-{
-    "extends": "react-app",
-    "rules": {
-        "no-unused-vars": "off",
-        "react-hooks/exhaustive-deps": "off",
-        "no-throw-literal": "off",
-        "no-sequences": "off",
-        "require-yield": "off",
-        "jsx-a11y/anchor-has-content": "off",
-        "jsx-a11y/anchor-is-valid": "off",
-        "import/no-anonymous-default-export": "off",
-        "no-useless-escape": "off"
-    }
-}
-```
 
 ## Material UI
 [MUI Document](https://mui.com/material-ui/getting-started/installation/)

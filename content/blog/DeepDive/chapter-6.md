@@ -1,5 +1,5 @@
 ---
-title: 데이터 타입
+title: 6장 데이터 타입
 date: 2022-12-20 10:12:88
 category: DeepDive
 thumbnail: { thumbnailSrc }
