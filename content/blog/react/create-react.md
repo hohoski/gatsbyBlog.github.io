@@ -78,15 +78,15 @@ Root에 tsconfig.json(typescript) or jsconfig.json 생성
 ```
 {
     "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@*": ["src/*"]
-        }
+        "baseUrl": "src",
     },
     "include": ["src"]
 }
 ```
 
+
+
+---
 ### scripts 의 eject 시에 발생하는 esLine error
 [facebook-github issue/12070](https://github.com/facebook/create-react-app/issues/12070)<br>
 `package.json` 내부 `eslintConfig` 속성에 아래 설정을 통해 해결.
