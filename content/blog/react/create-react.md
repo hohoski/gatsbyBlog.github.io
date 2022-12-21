@@ -84,7 +84,17 @@ Root에 tsconfig.json(typescript) or jsconfig.json 생성
 }
 ```
 
+***
+## create react app 시 발생하는 npm ERR! code ENOVERSIONS 에러
+```
+npm ERR! code ENOVERSIONS
+npm ERR! No valid versions available for react-create-app
+```
+[https://github.com/facebook/create-react-app/issues/8097](https://github.com/facebook/create-react-app/issues/8097) 
 
+> npm cache clean —force  // 캐시 삭제 <br>
+> npm uninstall -g create-react-app // CLI 지우기 <br>
+> rm -rf /usr/local/bin/create-react-app // 강제로 폴더 지우기
 
 ---
 ### scripts 의 eject 시에 발생하는 esLine error
