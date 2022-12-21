@@ -146,6 +146,16 @@ ROOT 에 .eslintrc.json 생성</p>
     "include": ["src"]
 }</code></pre></div>
 <hr>
+<h2 id="create-react-app-시-발생하는-npm-err-code-enoversions-에러" style="position:relative;"><a href="#create-react-app-%EC%8B%9C-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-npm-err-code-enoversions-%EC%97%90%EB%9F%AC" aria-label="create react app 시 발생하는 npm err code enoversions 에러 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>create react app 시 발생하는 npm ERR! code ENOVERSIONS 에러</h2>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">npm ERR! code ENOVERSIONS
+npm ERR! No valid versions available for react-create-app</code></pre></div>
+<p><a href="https://github.com/facebook/create-react-app/issues/8097" target="_blank" rel="noopener noreferrer">https://github.com/facebook/create-react-app/issues/8097</a> </p>
+<blockquote>
+<p>npm cache clean —force  // 캐시 삭제 <br>
+npm uninstall -g create-react-app // CLI 지우기 <br>
+rm -rf /usr/local/bin/create-react-app // 강제로 폴더 지우기</p>
+</blockquote>
+<hr>
 <h3 id="scripts-의-eject-시에-발생하는-esline-error" style="position:relative;"><a href="#scripts-%EC%9D%98-eject-%EC%8B%9C%EC%97%90-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-esline-error" aria-label="scripts 의 eject 시에 발생하는 esline error permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>scripts 의 eject 시에 발생하는 esLine error</h3>
 <p><a href="https://github.com/facebook/create-react-app/issues/12070" target="_blank" rel="noopener noreferrer">facebook-github issue/12070</a><br>
 <code class="language-text">package.json</code> 내부 <code class="language-text">eslintConfig</code> 속성에 아래 설정을 통해 해결.</p>
